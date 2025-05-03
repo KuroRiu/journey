@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journey Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/global');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Global Bold', sans-serif;
+    }
+
+    body {
+      background: url('a.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: white;
+      font-size: 18px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .logo:hover {
+      transition: all .3s ease;
+      transform: scale(1.1);
+      color: #73EC8B;
+      cursor: pointer;
+    }
+
+    .cal img {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      margin-left: 1100px;
+      filter: brightness(0) saturate(100%) invert(100%) sepia(2%) saturate(11%) hue-rotate(60deg) brightness(104%) contrast(100%);
+    }
+
+    .chat img {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      filter: brightness(0) saturate(100%) invert(100%) sepia(2%) saturate(11%) hue-rotate(60deg) brightness(104%) contrast(100%);
+    }
+
+    .com img {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      margin-right: 20px;
+      filter: brightness(0) saturate(100%) invert(100%) sepia(2%) saturate(11%) hue-rotate(60deg) brightness(104%) contrast(100%);
+    }
+
+    .cal img:hover {
+      transform: scale(1.2);
+      transition: all 0.3s;
+      cursor: pointer;
+      filter: brightness(0) saturate(100%) invert(55%) sepia(63%) saturate(420%) hue-rotate(73deg) brightness(95%) contrast(89%);
+    }
+
+    .chat img:hover {
+      transform: scale(1.2);
+      transition: all 0.3s;
+      cursor: pointer;
+      filter: brightness(0) saturate(100%) invert(55%) sepia(63%) saturate(420%) hue-rotate(73deg) brightness(95%) contrast(89%);
+    }
+
+    .com img:hover {
+      transform: scale(1.2);
+      transition: all 0.3s;
+      cursor: pointer;
+      filter: brightness(0) saturate(100%) invert(55%) sepia(63%) saturate(420%) hue-rotate(73deg) brightness(95%) contrast(89%);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav-links span {
+      margin-right: 5px;
+    }
+
+    .nav-links a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: grey;
+      text-decoration: underline;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: calc(100vh - 100px);
+    }
+
+    .modal {
+      background-color: white;
+      border-radius: 10px;
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .modal h2 {
+      margin: 0 0 20px;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .green-square {
+      width: 23px;
+      height: 100%;
+      background: #4CAF50;
+      position: absolute;
+      left: -40px;
+      top: 0;
+    }
+
+    .login-link {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      left: 320px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .login-link:hover {
+      color: grey;
+      text-decoration: underline;
+    }
+
+    .login-link a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .login-link a:hover {
+      color: grey;
+      text-decoration: underline;
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .social-buttons button {
+      flex: 1 1 45%;
+      padding: 10px;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .google {
+      background-color: #EF4040;
+      color: white;
+    }
+
+    .facebook {
+      background-color: #3A59D1;
+      color: white;
+    }
+
+    .google:hover {
+      transform: scale(0.9);
+      background-color: #F24C3D;
+    }
+
+    .facebook:hover {
+      transform: scale(0.9);
+      background-color: #525CEB;
+    }
+
+    .social-buttons img {
+      height: 16px;
+      filter: brightness(0) saturate(100%) invert(100%) sepia(2%) saturate(11%) hue-rotate(60deg) brightness(104%) contrast(100%);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus {
+      border: 1px solid #aaa;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      outline: none;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .checkbox input {
+      margin-right: 10px;
+      transform: scale(1.2);
+      transition: transform 0.2s;
+    }
+
+    .checkbox input:hover {
+      transform: scale(1.5);
+    }
+
+    .checkbox label {
+      cursor: pointer;
+      color: #000;
+    }
+
+    .checkbox label span {
+      color: #4CAF50;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .checkbox label span:hover {
+      text-decoration: underline;
+      color: grey;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      opacity: 0.9;
+      transform: scale(0.9);
+      background color: #73EC8B;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">JOURNEY</div>
+  <div class="cal">
+    <img src="cal.jpg" alt="Calendar">
+  </div>
+  <div class="chat">
+    <img src="chat.jpg" alt="Chat">
+  </div>
+  <div class="com">
+    <img src="com.jpg" alt="Compass">
+  </div>
+  <div class="nav-links">
+    <span>Welcome,</span>
+    <a href="#">Log In</a>
+    <span style="margin: 0 8px;">or</span>
+    <a href="#">Sign Up</a>
+  </div>
+</header>
+
+<div class="container">
+  <div class="modal">
+    <div class="login-link">
+      <a href="#">Log In</a>
+    </div>
+    <h2><span class="green-square"></span>&nbsp;&nbsp;Sign Up</h2>
+
+    <div class="social-buttons">
+      <button class="facebook">
+        <img src="f.jpg" alt="Facebook">
+        Facebook
+      </button>
+      <button class="google">
+        <img src="g.jpg" alt="Google">
+        Google
+      </button>
+    </div>
+
+    <form>
+      <div class="form-group">
+        <input type="text" placeholder="First Name">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Last Name">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Choose Password">
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Confirm Password">
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="terms">
+        <label for="terms">Agree our <span>Terms & Conditions</span></label>
+      </div>
+      <button type="submit">Create Account</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>
